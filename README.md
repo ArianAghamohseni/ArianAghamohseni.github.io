@@ -18,7 +18,8 @@ Open http://localhost:8088/. No package installation or build step is required.
 - `assets/`: favicon and social preview image.
 - `sitemap.xml`: update `lastmod` when publishing a substantive revision.
 
-Research entries and manuscript statuses were retained from the prior portfolio.
+The selected research section highlights DiffPM, bandit research, and VLM reasoning.
+Manuscript statuses were retained from the prior portfolio.
 Confirm new affiliations, publication decisions, author lists, and results with
 Arian before changing these claims. Entries with only a start date do not assert
 an ongoing institutional appointment.

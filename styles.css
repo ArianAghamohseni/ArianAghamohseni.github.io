@@ -849,3 +849,13 @@ footer .wordmark {
   .menu-toggle { min-height: 44px; }
   nav a { display: inline-flex; align-items: center; min-height: 44px; }
 }
+
+/* Two professional roles, below research and teaching. */
+.practice-grid.roles {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.roles .practice-card h3 { font-size: 24px; }
+.research-item .text-link { margin-top: 16px; }
+@media (max-width: 720px) {
+  .practice-grid.roles { grid-template-columns: 1fr; }
+}
