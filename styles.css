@@ -859,3 +859,7 @@ footer .wordmark {
 @media (max-width: 720px) {
   .practice-grid.roles { grid-template-columns: 1fr; }
 }
+
+/* Keep the leadership cards balanced, including when stacked on mobile. */
+.practice-grid.roles { grid-auto-rows: 1fr; }
+.roles .practice-card { height: 100%; }
