@@ -1,986 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arian Aghamohseni - Research Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #0f1b3c;
-            --secondary-color: #1e3a8a;
-            --accent-color: #06b6d4;
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --bg-light: #f8fafc;
-            --bg-white: rgba(255, 255, 255, 0.85);
-            --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            background-image: linear-gradient(120deg, #e0f2fe 0%, #f0fdfa 100%);
-            background-attachment: fixed;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header-grid {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .header-text h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .header-text .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .contact-item a:hover {
-            opacity: 0.9;
-        }
-
-        .contact-item a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: white;
-            transition: width 0.3s;
-        }
-
-        .contact-item a:hover::after {
-            width: 100%;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Section Styles */
-        section {
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 3px;
-        }
-
-        /* Research Interests */
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .interest-card {
-            background: var(--bg-white);
-            padding: 1.75rem;
-            border-radius: 12px;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            box-shadow: var(--card-shadow);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        .interest-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        .interest-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .interest-card i {
-            color: var(--accent-color);
-            font-size: 1.1em;
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--accent-color), #0ea5e9);
-            border-radius: 3px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-            background: var(--bg-white);
-            padding: 1.75rem;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            transition: var(--transition);
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 1.5rem;
-            width: 14px;
-            height: 14px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--accent-color);
-        }
-
-        .timeline-date {
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            color: var(--primary-color);
-        }
-
-        .timeline-institution {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .timeline-description {
-            color: var(--text-dark);
-            line-height: 1.7;
-        }
-
-        .supervisors {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        /* Publications */
-        .publication-list {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .publication-item {
-            background: var(--bg-white);
-            padding: 1.75rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-color);
-            box-shadow: var(--card-shadow);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .publication-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        .publication-title {
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-        }
-
-        .publication-status {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-color), #0ea5e9);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-            box-shadow: 0 2px 5px rgba(6, 182, 212, 0.2);
-        }
-
-        .publication-authors {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0.75rem;
-            font-style: italic;
-        }
-
-        .publication-summary {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            line-height: 1.7;
-        }
-
-        /* Education */
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .education-card {
-            background: var(--bg-white);
-            padding: 1.75rem;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            transition: var(--transition);
-        }
-
-        .education-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        .education-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.25rem;
-        }
-
-        .education-institution {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .education-details {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-        }
-
-        .gpa {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        /* Coursework */
-        .coursework-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .coursework-category {
-            background: var(--bg-white);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            transition: var(--transition);
-        }
-
-        .coursework-category:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        .coursework-category h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .coursework-list {
-            list-style: none;
-        }
-
-        .coursework-list li {
-            padding: 0.35rem 0;
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            position: relative;
-            padding-left: 1.25rem;
-        }
-
-        .coursework-list li::before {
-            content: '•';
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Recommendations */
-        .recommendations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .recommendation-item {
-            background: var(--bg-white);
-            padding: 1.25rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            box-shadow: var(--card-shadow);
-            backdrop-filter: blur(10px);
-        }
-
-        .recommendation-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        .recommendation-name {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-            font-size: 1.1rem;
-        }
-
-        .recommendation-title {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .recommendation-item a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.25rem;
-            margin-top: 0.5rem;
-        }
-
-        .recommendation-item a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .header-text h1 {
-                font-size: 2rem;
-            }
-
-            .contact-info {
-                justify-content: center;
-            }
-
-            .timeline {
-                padding-left: 1.5rem;
-            }
-
-            .timeline-item::before {
-                left: -2rem;
-            }
-
-            .container {
-                padding: 1rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        /* Print Styles */
-        @media print {
-            header {
-                background: white;
-                color: black;
-            }
-            
-            .contact-item a {
-                color: black;
-            }
-            
-            .timeline::before {
-                background: black;
-            }
-            
-            .publication-item {
-                border-left: 4px solid black;
-            }
-            
-            .section-title::after {
-                background: black;
-            }
-        }
-
-        /* Add smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Floating action button for mobile */
-        .fab {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--accent-color), #0ea5e9);
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 100;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .fab:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(6, 182, 212, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .fab {
-                display: flex;
-            }
-        }
-
-        /* Mobile menu */
-        .mobile-menu {
-            position: fixed;
-            bottom: 5rem;
-            right: 2rem;
-            background: var(--bg-white);
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            padding: 1rem;
-            display: none;
-            flex-direction: column;
-            gap: 0.5rem;
-            z-index: 99;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-menu a {
-            color: var(--text-dark);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: var(--transition);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .mobile-menu a:hover {
-            background: rgba(6, 182, 212, 0.1);
-            color: var(--accent-color);
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Arian Aghamohseni — AI Research & Engineering</title>
+<meta name="description" content="Arian Aghamohseni: AI research, applied engineering, and technical education. Generative models, reinforcement learning, probabilistic inference, and practical AI systems.">
+
+<link rel="canonical" href="https://arianaghamohseni.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arian Aghamohseni — AI Research & Engineering">
+<meta property="og:description" content="Exploring how models learn, reason, and become useful systems. Research, applied AI, and technical education.">
+<meta property="og:url" content="https://arianaghamohseni.github.io/">
+<meta property="og:image" content="https://arianaghamohseni.github.io/assets/social-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f5f0">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Arian Aghamohseni", "url": "https://arianaghamohseni.github.io/", "sameAs": ["https://github.com/ArianAghamohseni"], "alumniOf": {"@type": "CollegeOrUniversity", "name": "Sharif University of Technology"}}</script>
 </head>
-<body>
-    <header>
-        <div class="header-content">
-            <div class="header-grid">
-                <div class="header-text">
-                    <h1>Arian Aghamohseni</h1>
-                    <p class="subtitle">Research in Probabilistic Programming & Deep Generative Models</p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Tehran, Iran</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:arianaghamohseni@gmail.com">arianaghamohseni@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+989036211894">+98 903 621 1894</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-        <!-- Research Interests -->
-        <section class="fade-in">
-            <h2 class="section-title">Research Interests</h2>
-            <div class="interests-grid">
-                <div class="interest-card">
-                    <h3><i class="fas fa-brain"></i> Probabilistic Programming & Bayesian Inference</h3>
-                    <p>Universal PPLs, amortized/learned inference (inference compilation), Sequential Monte Carlo/particle methods, variational objectives, and compiler–runtime design for scalable inference.</p>
-                </div>
-                <div class="interest-card">
-                    <h3><i class="fas fa-image"></i> Deep Generative Models</h3>
-                    <p>Diffusion and latent-variable models (image/video), learned proposals/priors within PPLs, controllable generation and calibration, and evaluation under distribution shift.</p>
-                </div>
-                <div class="interest-card">
-                    <h3><i class="fas fa-robot"></i> RL for Inference & Simulation</h3>
-                    <p>Reinforcement learning for adaptive samplers/proposals (e.g., critic-guided SMC), simulation-based inference, and applications in autonomous driving, robotics, computer vision, and NLP.</p>
-                </div>
-            </div>
-        </section>
+<header class="site-header">
+<div class="shell header-inner">
+<a class="wordmark" href="#top" aria-label="Arian Aghamohseni, home">arian<span>.</span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">＋</span></button>
 
-        <!-- Research Experience -->
-        <section class="fade-in">
-            <h2 class="section-title">Research Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep 2025–Present</div>
-                    <div class="timeline-title">Text-to-Image Generative Models</div>
-                    <div class="timeline-institution">Sharif University of Technology — RIML Lab</div>
-                    <div class="timeline-description">
-                        We study inference-time and prompt/embedding optimization for text-to-image diffusion models. Our current focus includes defining losses aligned with conditioned Stable Diffusion objectives and a reward-driven prompt-embedding optimization procedure that couples principled reward selection with exploration to improve visual/textual alignment.
-                    </div>
-                    <div class="supervisors">
-                        <strong>Supervisors:</strong> Dr. Mohammad Hossein Rohban, Dr. Mahdieh Soleymani Baghshah
-                    </div>
-                </div>
+<nav id="navigation" aria-label="Main navigation"><a href="#work">Work</a><a href="#research">Research</a><a href="#teaching">Teaching</a><a href="#about">About</a><a href="#contact">Get in touch <span aria-hidden="true">↗</span></a></nav>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep 2025–Present</div>
-                    <div class="timeline-title">Reinforcement Learning for Reasoning in LLMs</div>
-                    <div class="timeline-institution">Sharif University of Technology — MLL Lab</div>
-                    <div class="timeline-description">
-                        We develop an RL-based optimization layer that adapts a model's reasoning policy during inference, trading off exploration depth and decisive steps via a shaped reward. The layer tunes sampling temperature, halting criteria, and verifier thresholds to minimize expected reasoning cost at a target accuracy. Early results improve pass@k under a fixed budget and reduce compute.
-                    </div>
-                    <div class="supervisors">
-                        <strong>Supervisor:</strong> Dr. Mahdieh Soleymani Baghshah
-                    </div>
-                </div>
+</div>
+</header>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">May 2025–Present</div>
-                    <div class="timeline-title">Non-Stationary Bandit Regret Analysis</div>
-                    <div class="timeline-institution">Sharif University of Technology</div>
-                    <div class="timeline-description">
-                        We analyze non-stationary linear bandits using geometric intuition and a four-way partition (combinatorial vs. continuous; full-space vs. restricted) to bound the first stage of the META algorithm. We derive new elimination criteria and show that, under mild drift assumptions, the algorithm attains regret rates comparable to the stationary case.
-                    </div>
-                    <div class="supervisors">
-                        <strong>Supervisors:</strong> Dr. Yasin Abbasi, Prof. András György
-                    </div>
-                </div>
+<main id="main">
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Nov 2024–Oct 2025</div>
-                    <div class="timeline-title">Multivariate Probabilistic Time-Series Representation Learning (DiffPM)</div>
-                    <div class="timeline-institution">Sharif University of Technology — RIML Lab</div>
-                    <div class="timeline-description">
-                        We developed DiffPM, a diffusion-based framework that factorizes multivariate sequences into low-frequency trends and high-frequency residuals, trains window-conditioned denoisers with position-aware stitching, and yields calibrated probabilistic embeddings supporting whole-series synthesis, reconstruction, and downstream forecasting with strong temporal coherence and efficient sampling.
-                    </div>
-                    <div class="supervisors">
-                        <strong>Supervisors:</strong> Dr. Mohammad Hossein Rohban, Dr. Babak Khalaj
-                    </div>
-                </div>
+<section class="hero shell" aria-labelledby="intro-title">
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Apr 2025–Oct 2025</div>
-                    <div class="timeline-title">Representation Learning with Diffusion Models</div>
-                    <div class="timeline-institution">Amirkabir University of Technology (Tehran Polytechnic)</div>
-                    <div class="timeline-description">
-                        We use conditioned diffusion models for transferable representation learning: we integrate classifier-free guidance into the conditioned process and shape the noise schedule/variance to extract disentangled feature maps, which are then transferred to a fine-tuned ResNet for image classification.
-                    </div>
-                    <div class="supervisors">
-                        <strong>Supervisor:</strong> Dr. Ahmad Nickabadi
-                    </div>
-                </div>
+<div class="hero-copy">
+<p class="eyebrow"><span class="small-line"></span> Arian Aghamohseni · Tehran, Iran</p>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep 2024–Mar 2025</div>
-                    <div class="timeline-title">Generative Models (Diffusion & DiTs)</div>
-                    <div class="timeline-institution">Amirkabir University of Technology (Tehran Polytechnic)</div>
-                    <div class="timeline-description">
-                        We improved sample quality and efficiency for diffusion models and Diffusion Transformers by combining token merging and caching with VAE-inspired latent regularization, achieving better FID alongside smoother latent space trajectories and lower compute.
-                    </div>
-                    <div class="supervisors">
-                        <strong>Supervisor:</strong> Dr. Ahmad Nickabadi
-                    </div>
-                </div>
-            </div>
-        </section>
+<h1 id="intro-title">From models<br>to <em>meaningful</em><br>systems.</h1>
 
-        <!-- Publications -->
-        <section class="fade-in">
-            <h2 class="section-title">Publications</h2>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <div class="publication-title">DiffPM: Diffusion-Based Generative Framework for Time Series Synthesis</div>
-                    <div class="publication-status">Preprint</div>
-                    <div class="publication-authors">
-                        Arian Aghamohseni, Payam Taebi, Seyedreza Tavakoli, Shaygan Adim, Siavash Ahmadi, Babak Khalaj, Mohammad Hossein Rohban
-                    </div>
-                    <div class="publication-summary">
-                        Factorizes trend/residual and stitches parallel window samples to synthesize full multivariate series with strong fidelity, long-range coherence, and fast sampling.
-                    </div>
-                </div>
+<p class="hero-description">I work across AI research, applied engineering, and technical education—exploring how models learn, reason, and become useful in practice.</p>
 
-                <div class="publication-item">
-                    <div class="publication-title">Sequential Noise-Tolerant Deep Learning for Scalable Food Image Classification in Health Applications</div>
-                    <div class="publication-status">Manuscript in preparation</div>
-                    <div class="publication-authors">
-                        Arian Aghamohseni, Amirhossein Teymouri, Amirreza Salehi
-                    </div>
-                    <div class="publication-summary">
-                        Curriculum-style staging (clean→noisy) with transfer learning (MobileVNet, InceptionV3) boosts robustness and accuracy on challenging food-image datasets.
-                    </div>
-                </div>
+<div class="hero-actions"><a class="button" href="#work">Explore my work <span aria-hidden="true">↓</span></a><a class="text-link" href="https://github.com/ArianAghamohseni">GitHub <span aria-hidden="true">↗</span></a></div>
+</div>
 
-                <div class="publication-item">
-                    <div class="publication-title">Non-Stationary Bandit Regret Analysis</div>
-                    <div class="publication-status">In preparation</div>
-                    <div class="publication-authors">
-                        Ramting Moslemi, Arian Aghamohseni, Amirhossein Asadi, Yasin Abbasi, András György, Siavash Ahmadi
-                    </div>
-                    <div class="publication-summary">
-                        Geometric four-partition with drift-aware elimination rules yielding stationary-level regret under mild non-stationarity in linear bandits.
-                    </div>
-                </div>
+<div class="field" role="img" aria-label="A network connecting research, systems, and people">
+<div class="field-grid"></div>
+<span class="field-label">A connected practice</span>
+<svg class="network" viewBox="0 0 460 460" aria-hidden="true"><g fill="none" stroke="#555c50" stroke-width="1">
+<path d="M80 270L225 105L365 260L230 360Z"/>
+<path d="M80 270L365 260M225 105L230 360M80 270L230 360M225 105L365 260"/><circle cx="230" cy="230" r="152" stroke-dasharray="3 8"/><circle cx="230" cy="230" r="90" stroke="#343c32"/></g><g fill="#b9c69b"><circle cx="225" cy="105" r="7"/><circle cx="365" cy="260" r="7"/><circle cx="80" cy="270" r="7"/></g><circle cx="230" cy="360" r="7" fill="#f1794f"/><circle cx="230" cy="230" r="24" fill="#f1794f"/>
+<path d="M220 230h20m-10-10v20" stroke="#20271e" stroke-width="1.5"/><g fill="#edf0e4" font-size="12" font-family="monospace"><text x="225" y="81" text-anchor="middle">RESEARCH</text><text x="370" y="290" text-anchor="middle">SYSTEMS</text><text x="75" y="301" text-anchor="middle">LEARNING</text><text x="230" y="390" text-anchor="middle">PEOPLE</text></g></svg>
 
-                <div class="publication-item">
-                    <div class="publication-title">Prompt-Embedding Optimization for One-Step Text-to-Image Diffusion</div>
-                    <div class="publication-status">In preparation</div>
-                    <div class="publication-authors">
-                        Arian Aghamohseni, Amir Kasaei, Mahdieh Soleymani Baghshah, Mohammad Hossein Rohban
-                    </div>
-                    <div class="publication-summary">
-                        Reward-driven optimization of encoded prompt embeddings for single-step diffusion improves image–text alignment while preserving low inference latency.
-                    </div>
-                </div>
-            </div>
-        </section>
+<p class="field-footer"><span>Ideas ↔ implementation</span><span>01—03</span></p>
+</div>
 
-        <!-- Education -->
-        <section class="fade-in">
-            <h2 class="section-title">Education</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>B.Sc. in Industrial Engineering</h3>
-                    <div class="education-institution">Sharif University of Technology</div>
-                    <div class="education-details">
-                        <p><strong>Graduation:</strong> June 2025</p>
-                        <p><strong>Total GPA:</strong> <span class="gpa">3.72/4.00</span> (17.02/20.00)</p>
-                        <p><strong>CS/AI GPA:</strong> <span class="gpa">4.00/4.00</span></p>
-                    </div>
-                </div>
-                <div class="education-card">
-                    <h3>National Diploma (Mathematics)</h3>
-                    <div class="education-institution">Tehran, Iran</div>
-                    <div class="education-details">
-                        <p><strong>Graduation:</strong> June 2021</p>
-                        <p><strong>GPA:</strong> 19.86/20.00</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+</section>
 
-        <!-- Coursework -->
-        <section class="fade-in">
-            <h2 class="section-title">Selected Coursework</h2>
-            <div class="coursework-grid">
-                <div class="coursework-category">
-                    <h4><i class="fas fa-graduation-cap"></i> Graduate-level</h4>
-                    <ul class="coursework-list">
-                        <li>Deep Reinforcement Learning (Dr. Rohban)</li>
-                        <li>High-Dimensional Statistics (Dr. Rohban; Dr. Najafi)</li>
-                        <li>Deep Generative Models (Dr. Amini; audited)</li>
-                        <li>Deep Learning (Dr. Soleymani; audited)</li>
-                        <li>Natural Language Processing (Dr. Rohban & Dr. Soleymani; audited)</li>
-                    </ul>
-                </div>
-                <div class="coursework-category">
-                    <h4><i class="fas fa-book"></i> Core</h4>
-                    <ul class="coursework-list">
-                        <li>Machine Learning (Dr. Sharifi Zarchi)</li>
-                        <li>Regression Analysis (Dr. Ebadi)</li>
-                        <li>Convex Optimization (Dr. Yassaee)</li>
-                        <li>Decision Theory (Dr. Kourosh Eshghi)</li>
-                        <li>Probability & Statistics (Dr. Khedmati)</li>
-                        <li>Stochastic Processes (Dr. Rahimi Tabar; audited)</li>
-                        <li>Simulation Basics</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<div class="focus-strip">
+<div class="shell"><span>Generative models</span><span>Reinforcement learning</span><span>Applied AI</span><span>Technical education</span></div>
+</div>
 
-        <!-- Recommendations -->
-        <section class="fade-in">
-            <h2 class="section-title">Recommendations</h2>
-            <div class="recommendations-grid">
-                <div class="recommendation-item">
-                    <div class="recommendation-name">Dr. Mohammad Hossein Rohban</div>
-                    <div class="recommendation-title">Assistant Professor, Sharif University of Technology</div>
-                    <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-                <div class="recommendation-item">
-                    <div class="recommendation-name">Dr. Babak Khalaj</div>
-                    <div class="recommendation-title">Professor, Sharif University of Technology</div>
-                    <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-                <div class="recommendation-item">
-                    <div class="recommendation-name">Dr. Yasin Abbasi</div>
-                    <div class="recommendation-title">Assistant Professor, Sharif University of Technology</div>
-                    <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-                <div class="recommendation-item">
-                    <div class="recommendation-name">Dr. Mohammad Hossein Yassaee</div>
-                    <div class="recommendation-title">Assistant Professor, Sharif University of Technology</div>
-                    <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-                <div class="recommendation-item">
-                    <div class="recommendation-name">Dr. Mahdieh Soleymani Baghshah</div>
-                    <div class="recommendation-title">Associate Professor, Sharif University of Technology</div>
-                    <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-                <div class="recommendation-item">
-                    <div class="recommendation-name">Dr. Ahmad Nickabadi</div>
-                    <div class="recommendation-title">Associate Professor, Amirkabir University of Technology</div>
-                    <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-                <div class="recommendation-item">
-                    <div class="recommendation-name">Dr. Siavash Ahmadi</div>
-                    <div class="recommendation-title">Assistant Professor, Sharif University of Technology</div>
-                    <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-                <div class="recommendation-item">
-                    <div class="recommendation-name">Dr. Erfan Hassannayebi</div>
-                    <div class="recommendation-title">Assistant Professor, Sharif University of Technology</div>
-                    <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                </div>
-            </div>
-        </section>
+<section class="section shell" id="work" aria-labelledby="work-title">
+<div class="section-heading">
+<div>
+<p class="eyebrow">01 / Practice</p>
 
-        <!-- Last Updated -->
-        <section class="fade-in" style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
-            <p style="color: var(--text-light); font-size: 0.9rem;">
-                <i class="fas fa-calendar-alt"></i> Last updated in October 2025
-            </p>
-        </section>
-    </div>
+<h2 id="work-title">Research meets<br>the real world.</h2>
+</div>
 
-    <!-- Floating Action Button for Mobile -->
-    <div class="fab" onclick="toggleMobileMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
+<p>My work spans the models themselves, the systems around them, and the people learning to build with them.</p>
+</div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#top"><i class="fas fa-home"></i> Home</a>
-        <a href="#interests"><i class="fas fa-brain"></i> Research Interests</a>
-        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-        <a href="#publications"><i class="fas fa-file-alt"></i> Publications</a>
-        <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-    </div>
+<div class="practice-grid">
+<article class="practice-card"><span class="card-number">01</span>
+<h3>AI research</h3>
 
-    <script>
-        // Add IDs to sections for navigation
-        document.querySelectorAll('section').forEach((section, index) => {
-            if (index === 0) section.id = 'interests';
-            else if (index === 1) section.id = 'experience';
-            else if (index === 2) section.id = 'publications';
-            else if (index === 3) section.id = 'education';
-        });
+<p>Generative modeling, reinforcement learning, and probabilistic inference, with research experience at Sharif University of Technology and Amirkabir University of Technology.</p>
+<a class="text-link" href="#research">Selected research <span aria-hidden="true">↓</span></a></article>
 
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
+<article class="practice-card"><span class="card-number">02</span>
+<h3>Applied engineering</h3>
 
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(el);
-        });
+<p>Connecting models to practical workflows: speech and language tools, multimodal systems, automation, and the infrastructure needed to run them.</p>
+<a class="text-link" href="https://github.com/ArianAghamohseni">Browse my GitHub <span aria-hidden="true">↗</span></a></article>
 
-        // Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+<article class="practice-card"><span class="card-number">03</span>
+<h3>Technical education</h3>
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        }
+<p>Working on Quera bootcamp programs across Agentic AI, MLOps, and DevOps—from learning materials and projects to mentoring workflows and program operations.</p>
+<a class="text-link" href="#teaching">Teaching & programs <span aria-hidden="true">↓</span></a></article>
+</div>
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const fab = document.querySelector('.fab');
-            const menu = document.getElementById('mobileMenu');
-            if (!fab.contains(event.target) && !menu.contains(event.target)) {
-                menu.classList.remove('active');
-            }
-        });
+<div class="repo-row">
+<div>
+<p class="eyebrow">Selected public code</p>
 
-        // Add scroll effect to header
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            const header = document.querySelector('header');
-            
-            if (currentScroll > 100) {
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-            } else {
-                header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-            }
-            
-            lastScroll = currentScroll;
-        });
+<h3>DiffPM</h3>
 
-        // Add hover effect to cards
-        document.querySelectorAll('.interest-card, .timeline-item, .publication-item, .education-card, .coursework-category, .recommendation-item').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-    </script>
-</body>
-</html>
+<p>Diffusion-based generative modeling for multivariate time series.</p>
+</div>
+<a class="round-link" href="https://github.com/ArianAghamohseni/DiffPM" aria-label="View the DiffPM GitHub repository">↗</a></div>
+</section>
+
+<section class="research-section" id="research" aria-labelledby="research-title">
+<div class="shell section">
+<div class="section-heading">
+<div>
+<p class="eyebrow">02 / Research</p>
+
+<h2 id="research-title">Learning, generation,<br>and inference.</h2>
+</div>
+
+<p>I’m interested in how learning and inference fit together: from generative models and learned proposals to reinforcement learning for reasoning.</p>
+</div>
+
+<div class="interest-tags"><span>Probabilistic programming</span><span>Bayesian inference</span><span>Diffusion models</span><span>Sequential Monte Carlo</span><span>RL for reasoning</span><span>Simulation-based inference</span></div>
+
+<div class="research-list">
+<article class="research-item">
+<div class="research-meta">Started September 2025<br><span>Sharif University of Technology — RIML Lab</span></div>
+
+<div>
+<h3>Text-to-Image Generative Models</h3>
+
+<p>We study inference-time and prompt/embedding optimization for text-to-image diffusion models. Our current focus includes defining losses aligned with conditioned Stable Diffusion objectives and a reward-driven prompt-embedding optimization procedure that couples principled reward selection with exploration to improve visual/textual alignment.</p>
+
+<p class="supervisors">Supervisors: Dr. Mohammad Hossein Rohban, Dr. Mahdieh Soleymani Baghshah</p>
+</div>
+</article>
+
+<article class="research-item">
+<div class="research-meta">Started September 2025<br><span>Sharif University of Technology — MLL Lab</span></div>
+
+<div>
+<h3>Reinforcement Learning for Reasoning in LLMs</h3>
+
+<p>We develop an RL-based optimization layer that adapts a model&#x27;s reasoning policy during inference, trading off exploration depth and decisive steps via a shaped reward. The layer tunes sampling temperature, halting criteria, and verifier thresholds to minimize expected reasoning cost at a target accuracy. Early results improve pass@k under a fixed budget and reduce compute.</p>
+
+<p class="supervisors">Supervisor: Dr. Mahdieh Soleymani Baghshah</p>
+</div>
+</article>
+
+<article class="research-item">
+<div class="research-meta">Started May 2025<br><span>Sharif University of Technology</span></div>
+
+<div>
+<h3>Non-Stationary Bandit Regret Analysis</h3>
+
+<p>We analyze non-stationary linear bandits using geometric intuition and a four-way partition (combinatorial vs. continuous; full-space vs. restricted) to bound the first stage of the META algorithm. We derive new elimination criteria and show that, under mild drift assumptions, the algorithm attains regret rates comparable to the stationary case.</p>
+
+<p class="supervisors">Supervisors: Dr. Yasin Abbasi, Prof. András György</p>
+</div>
+</article>
+
+<article class="research-item">
+<div class="research-meta">Nov 2024–Oct 2025<br><span>Sharif University of Technology — RIML Lab</span></div>
+
+<div>
+<h3>Multivariate Probabilistic Time-Series Representation Learning (DiffPM)</h3>
+
+<p>We developed DiffPM, a diffusion-based framework that factorizes multivariate sequences into low-frequency trends and high-frequency residuals, trains window-conditioned denoisers with position-aware stitching, and yields calibrated probabilistic embeddings supporting whole-series synthesis, reconstruction, and downstream forecasting with strong temporal coherence and efficient sampling.</p>
+
+<p class="supervisors">Supervisors: Dr. Mohammad Hossein Rohban, Dr. Babak Khalaj</p>
+</div>
+</article>
+
+<article class="research-item">
+<div class="research-meta">Apr 2025–Oct 2025<br><span>Amirkabir University of Technology (Tehran Polytechnic)</span></div>
+
+<div>
+<h3>Representation Learning with Diffusion Models</h3>
+
+<p>We use conditioned diffusion models for transferable representation learning: we integrate classifier-free guidance into the conditioned process and shape the noise schedule/variance to extract disentangled feature maps, which are then transferred to a fine-tuned ResNet for image classification.</p>
+
+<p class="supervisors">Supervisor: Dr. Ahmad Nickabadi</p>
+</div>
+</article>
+
+<article class="research-item">
+<div class="research-meta">Sep 2024–Mar 2025<br><span>Amirkabir University of Technology (Tehran Polytechnic)</span></div>
+
+<div>
+<h3>Generative Models (Diffusion &amp; DiTs)</h3>
+
+<p>We improved sample quality and efficiency for diffusion models and Diffusion Transformers by combining token merging and caching with VAE-inspired latent regularization, achieving better FID alongside smoother latent space trajectories and lower compute.</p>
+
+<p class="supervisors">Supervisor: Dr. Ahmad Nickabadi</p>
+</div>
+</article>
+</div>
+
+<details class="manuscripts">
+<summary><span>Manuscripts & research writing</span><span class="details-hint">View 4 works <span aria-hidden="true">＋</span></span></summary>
+
+<div class="manuscript-grid">
+<article class="manuscript"><span class="tag">Preprint</span>
+<h3>DiffPM: Diffusion-Based Generative Framework for Time Series Synthesis</h3>
+
+<p class="authors">Arian Aghamohseni, Payam Taebi, Seyedreza Tavakoli, Shaygan Adim, Siavash Ahmadi, Babak Khalaj, Mohammad Hossein Rohban</p>
+
+<p>Factorizes trend/residual and stitches parallel window samples to synthesize full multivariate series with strong fidelity, long-range coherence, and fast sampling.</p>
+<a class="text-link" href="https://github.com/ArianAghamohseni/DiffPM">Explore the repository <span aria-hidden="true">↗</span></a></article>
+
+<article class="manuscript"><span class="tag">Manuscript in preparation</span>
+<h3>Sequential Noise-Tolerant Deep Learning for Scalable Food Image Classification in Health Applications</h3>
+
+<p class="authors">Arian Aghamohseni, Amirhossein Teymouri, Amirreza Salehi</p>
+
+<p>Curriculum-style staging (clean→noisy) with transfer learning (MobileVNet, InceptionV3) boosts robustness and accuracy on challenging food-image datasets.</p>
+</article>
+
+<article class="manuscript"><span class="tag">In preparation</span>
+<h3>Non-Stationary Bandit Regret Analysis</h3>
+
+<p class="authors">Ramting Moslemi, Arian Aghamohseni, Amirhossein Asadi, Yasin Abbasi, András György, Siavash Ahmadi</p>
+
+<p>Geometric four-partition with drift-aware elimination rules yielding stationary-level regret under mild non-stationarity in linear bandits.</p>
+</article>
+
+<article class="manuscript"><span class="tag">In preparation</span>
+<h3>Prompt-Embedding Optimization for One-Step Text-to-Image Diffusion</h3>
+
+<p class="authors">Arian Aghamohseni, Amir Kasaei, Mahdieh Soleymani Baghshah, Mohammad Hossein Rohban</p>
+
+<p>Reward-driven optimization of encoded prompt embeddings for single-step diffusion improves image–text alignment while preserving low inference latency.</p>
+</article>
+</div>
+</details>
+
+</div>
+</section>
+
+<section class="section shell teaching" id="teaching" aria-labelledby="teaching-title">
+<div>
+<p class="eyebrow">03 / Teaching & programs</p>
+
+<h2 id="teaching-title">Make the work<br><em>understandable.</em></h2>
+
+<p class="section-description">Building a useful system and helping someone understand it are closely connected. At Quera, my work includes the practical details that turn technical content into a learning experience.</p>
+</div>
+
+<div class="teaching-list">
+<article><span>01</span>
+<div>
+<h3>Agentic AI</h3>
+
+<p>Learning materials, practical projects, and workflows for building with AI agents.</p>
+</div>
+</article>
+
+<article><span>02</span>
+<div>
+<h3>MLOps & DevOps</h3>
+
+<p>Programs connecting machine learning and software practice with deployment and operations.</p>
+</div>
+</article>
+
+<article><span>03</span>
+<div>
+<h3>Program operations</h3>
+
+<p>Course schedules, recordings, assignments, mentor coordination, and feedback workflows.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="about-section" id="about" aria-labelledby="about-title">
+<div class="shell section about-grid">
+<div>
+<p class="eyebrow">04 / Background</p>
+
+<h2 id="about-title">A quantitative<br>foundation.<br>A builder’s mindset.</h2>
+
+<p class="section-description">I studied Industrial Engineering at Sharif University of Technology, then developed my interests across machine learning, optimization, and AI research.</p>
+<a class="text-link" href="mailto:arianaghamohseni@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></div>
+
+<div class="background">
+<article>
+<p class="eyebrow">Education · June 2025</p>
+
+<h3>B.Sc. in Industrial Engineering</h3>
+
+<p>Sharif University of Technology</p>
+
+<dl>
+<div><dt>Overall GPA</dt><dd>17.02 / 20</dd></div>
+
+<div><dt>CS / AI GPA</dt><dd>4.00 / 4.00</dd></div>
+</dl>
+</article>
+
+<article>
+<p class="eyebrow">Selected coursework</p>
+
+<p>Machine Learning · Deep Reinforcement Learning · High-Dimensional Statistics · Convex Optimization · Regression Analysis</p>
+
+<p class="muted">Also audited courses in deep generative models, deep learning, natural language processing, and stochastic processes.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="contact-section shell section" id="contact" aria-labelledby="contact-title">
+<p class="eyebrow">Have something in mind?</p>
+
+<h2 id="contact-title">Let’s build something<br><em>worth understanding.</em></h2>
+<a class="contact-email" href="mailto:arianaghamohseni@gmail.com">arianaghamohseni@gmail.com <span aria-hidden="true">↗</span></a>
+<div class="contact-links"><a href="https://github.com/ArianAghamohseni">GitHub ↗</a><a href="#research">Research ↑</a></div>
+</section>
+
+</main>
+
+<footer class="shell"><a class="wordmark" href="#top" aria-label="Back to top">arian<span>.</span></a>
+<p>© 2026 Arian Aghamohseni</p>
+
+<p>Site updated November 2026</p>
+<a href="#top">Back to top ↑</a></footer>
+
+</body></html>
