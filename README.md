@@ -23,5 +23,6 @@ Confirm new affiliations, publication decisions, author lists, and results with
 Arian before changing these claims. Entries with only a start date do not assert
 an ongoing institutional appointment.
 
-GitHub Pages publishes the repository root. Do not put tokens, environment files,
+GitHub Pages publishes the repository root through `.github/workflows/pages.yml`
+on pushes to `main`. Do not put tokens, environment files,
 internal project documents, or private service endpoints in this repository.
